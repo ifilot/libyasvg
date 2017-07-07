@@ -251,6 +251,7 @@ void Svg2Cairo::Path::perform_operation(cairo_t* cr, char new_operand) {
             cairo_arc_negative(cr, 0.0, 0.0, 1.0, centercoord[2], centercoord[2] + centercoord[3]);
             cairo_restore(cr);
         }
+        break;
         case 'a': { // relative arc (not the same as a cairo, so we need to do some math here)
             cairo_save(cr);
 
@@ -282,6 +283,7 @@ void Svg2Cairo::Path::perform_operation(cairo_t* cr, char new_operand) {
             cairo_get_current_point(cr, &x, &y);
             cairo_line_to(cr, x, coord[0]);
         }
+        break;
         case 'v': { // relative vertical line
             double x,y;
             cairo_get_current_point(cr, &x, &y);
@@ -293,11 +295,13 @@ void Svg2Cairo::Path::perform_operation(cairo_t* cr, char new_operand) {
             cairo_get_current_point(cr, &x, &y);
             cairo_line_to(cr, x + coord[0], y);
         }
+        break;
         case 'H': { // horizontal line
             double x,y;
             cairo_get_current_point(cr, &x, &y);
             cairo_line_to(cr, coord[0], y);
         }
+        break;
         case 'c': { // relative curve
             double x,y;
             cairo_get_current_point(cr, &x, &y);
@@ -306,6 +310,7 @@ void Svg2Cairo::Path::perform_operation(cairo_t* cr, char new_operand) {
             cairo_curve_to (cr, coord[0], coord[1], coord[2], coord[3], coord[4], coord[5]);
             cairo_restore(cr);
         }
+        break;
         case 'C': { // curve
             cairo_curve_to (cr, coord[0], coord[1], coord[2], coord[3], coord[4], coord[5]);
         }
@@ -313,6 +318,7 @@ void Svg2Cairo::Path::perform_operation(cairo_t* cr, char new_operand) {
         case 'Z': { // close path
             cairo_close_path(cr);
         }
+        break;
         case 'z': { // close path
             cairo_close_path(cr);
         }
