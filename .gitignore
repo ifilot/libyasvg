@@ -1,0 +1,83 @@
+# Build folder
+build/
+build-test/
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.Po
+
+# Compiled Dynamic libraries
+*.so
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Compiled Python
+*.pyc
+
+# Output files from the program
+*.out
+
+# test files
+bin/tests/*.trs
+bin/tests/*.log
+bin/tests/run*
+bin/tests/run/
+bin/tests/SR*
+
+# Executable
+mkmcxx
+!mkmcxx/
+/test/*test
+
+# Temporary files
+*.cpp~
+*.ac~
+*.in~
+*.h~
+*.am~
+*.plt~
+*.tex~
+*.bib~
+*.mlm~
+
+# figures should be small size
+*.ps
+
+# latex files
+/doc/dev/*.aux
+/doc/dev/*.toc
+/doc/dev/*.bib
+/doc/dev/*.bbl
+/doc/dev/*.log
+
+/repos/*
+/test/SR*
+/test/run
+/test/rungnuplot.sh
+/examples/*/run
+/examples/*/SR*
+/examples/*/output.log
+/examples/*/rungnuplot.sh
+/examples/*/TPD*
+/nbproject/*
+/bin/tests/*
+!/bin/tests/*.mkm
+!/bin/tests/*.fit
+
+#Some lib wrapper
+/ar-lib
+crossbuild/repos/*
+crossbuild/castoridae/builds/*
+
+# repos
+*.tar.bz2
+
+
+# other
+output.log
+src/config.h
